@@ -21,7 +21,7 @@
       "nave": "~0.4.3",
       "tap": "~0.4.3"
     },
-    "keywords": [] ,
+    "keywords": [ "prune", "remove", "clean", "html", "css", "selector", "trim" ] ,
     "author" : {
       "name" : "Thorsten Lorenz",
       "email" : "thlorenz@gmx.de",

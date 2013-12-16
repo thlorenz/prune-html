@@ -1,9 +1,10 @@
-# prune-html
-[![build status](https://secure.travis-ci.org/thlorenz/prune-html.png)](http://travis-ci.org/thlorenz/prune-html)
+# prune-html [![build status](https://secure.travis-ci.org/thlorenz/prune-html.png)](http://travis-ci.org/thlorenz/prune-html)
 
 Given an html string it removes elements matching CSS selector(s) and returns the pruned html string.
 
 ```js
+var pruneHtml = require('prune-html');
+
 var html = [
     '<div>'
   , '  <h1 class="page-title">Global</h1>'
@@ -19,7 +20,7 @@ var html = [
   , '</div>'
 ].join('\n')
 
-console.log(prune([ 'h1', '.details', 'h3' ], html));
+console.log(pruneHtml([ 'h1', '.details', 'h3' ], html));
 /* =>
 <div>
   <header>

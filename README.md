@@ -33,6 +33,27 @@ console.log(pruneHtml([ 'h1', '.details', 'h3' ], html));
 </div> */
 ```
 
+You can further refine the element filtering using [cheerio attributes][].
+```js
+var pruneHtml = require('prune-html');
+
+var html = [
+    '<div class="container-overview">'
+  , '  <dl data-prune="" class="details"></dl>'
+  , '</div>'
+].join('\n');
+
+function filter_by_attribute () {
+  return this.data('prune') !== undefined;
+}
+
+console.log(pruneHtml([ '*' ], html, filter_by_attribute));
+/* =>
+<div class="container-overview">
+</div>
+*/
+```
+
 ## Installation
 
     npm install prune-html
@@ -55,3 +76,5 @@ console.log(pruneHtml([ 'h1', '.details', 'h3' ], html));
 ## License
 
 MIT
+
+[cheerio attributes]: https://github.com/MatthewMueller/cheerio#attributes

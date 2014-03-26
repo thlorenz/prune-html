@@ -44,11 +44,11 @@ var html = [
   , '</div>'
 ].join('\n');
 
-function filter_by_attribute () {
+function filterPruneData() {
   return this.data('prune') !== undefined;
 }
 
-console.log(pruneHtml([ '*' ], html, filter_by_attribute));
+console.log(pruneHtml([ '*' ], html, filterPruneData));
 /* =>
 <div class="container-overview">
 </div>
@@ -127,9 +127,9 @@ console.log(pruneHtml([ '*' ], html, filter_by_attribute));
 <dt class="tag-source">Source:</dt>
 <dd class="tag-source"><ul class="dummy">
 <li>
-<a href="https://github.com/thlorenz/prune-html/blob/pr/index.js">index.js</a>
+<a href="https://github.com/thlorenz/prune-html/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/thlorenz/prune-html/blob/pr/index.js#L21">lineno 21</a>
+<a href="https://github.com/thlorenz/prune-html/blob/master/index.js#L21">lineno 21</a>
 </li>
 </ul></dd>
 </dl>

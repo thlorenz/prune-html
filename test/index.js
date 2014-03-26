@@ -89,12 +89,12 @@ test('\nmulti selectors', function (t) {
 
 test('\nelement filter', function (t) {
   
-  function filter_by_attribute () {
+  function filterPruneData () {
     return this.data('prune') !== undefined;
   }
 
   t.deepEqual(
-      prune([ '*' ], html, filter_by_attribute).split('\n')
+      prune([ '*' ], html, filterPruneData).split('\n')
     , [ '<div class="jsdoc-githubify">',
         '  <h1 class="page-title">Global</h1>',
         '  <header>',

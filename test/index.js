@@ -12,7 +12,7 @@ var html = [
   , '  </header>'
   , '  <article>'
   , '    <div class="container-overview">'
-  , '      <dl class="details"></dl>'
+  , '      <dl data-prune="" class="details"></dl>'
   , '    </div>'
   , '    <h3 class="subsection-title">Methods</h3>'
   , '  </article>'
@@ -33,7 +33,7 @@ test('\nsingle selector', function (t) {
         '  </header>',
         '  <article>',
         '    <div class="container-overview">',
-        '      <dl class="details"></dl>',
+        '      <dl data-prune="" class="details"></dl>',
         '    </div>',
         '    <h3 class="subsection-title">Methods</h3>',
         '  </article>',
@@ -81,6 +81,28 @@ test('\nmulti selectors', function (t) {
         '  <article>',
         '    <div class="container-overview">',
         '    </div>',
+        '  </article>',
+        '</div>' ]
+  )
+  t.end()
+})
+
+test('\nelement filter', function (t) {
+  
+  function filter_by_attribute () {
+    return this.data('prune') !== undefined;
+  }
+  t.deepEqual(
+      prune([ '*' ], html, filter_by_attribute).split('\n')
+    , [ '<div class="jsdoc-githubify">',
+        '  <h1 class="page-title">Global</h1>',
+        '  <header>',
+        '    <h2>Hello</h2>',
+        '  </header>',
+        '  <article>',
+        '    <div class="container-overview">',
+        '    </div>',
+        '    <h3 class="subsection-title">Methods</h3>',
         '  </article>',
         '</div>' ]
   )

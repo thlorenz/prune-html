@@ -2,8 +2,11 @@
 
 var cheerio = require('cheerio');
 
-function prune(dom, selector) {
-  dom.find(selector).remove();
+function prune(dom, filter, selector) {
+  if (filter === undefined)
+    dom.find(selector).remove();
+  else
+    dom.find(selector).filter(filter).remove();
 }
 
 function removeEmptyLines(html) {
@@ -23,12 +26,13 @@ var go = module.exports =
  * @function
  * @param {Array.<String>|String} selectors if one of these CSS selector(s) matches, the element is pruned
  * @param {String} html unpruned
+ * @param {Function} optional function which can be used to filter elements further. Inside the function, `this` refers to the current element.
  * @return {String} the pruned html
  */
-function pruneHtml(selectors, html) {
+function pruneHtml(selectors, html, filter) {
   selectors = Array.isArray(selectors) ? selectors : [ selectors ];
   var dom = cheerio('<__wrap__>' + html + '</__wrap__>');
-  selectors.forEach(prune.bind(null, dom))
+  selectors.forEach(prune.bind(null, dom, filter));
 
   return removeEmptyLines(dom.html());
 };

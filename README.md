@@ -60,7 +60,7 @@ console.log(pruneHtml([ '*' ], html, filter_by_attribute));
 
 ## API
 
-### pruneHtml(selectors, html)
+### pruneHtml(selectors, html, filter)
 ```
 /**
  * Prunes all elements matching the selectors from the given html and returns result.
@@ -69,6 +69,7 @@ console.log(pruneHtml([ '*' ], html, filter_by_attribute));
  * @function
  * @param {Array.<String>|String} selectors if one of these CSS selector(s) matches, the element is pruned
  * @param {String} html unpruned
+ * @param {Function} optional function which can be used to filter elements further. Inside the function, `this` refers to the current element.
  * @return {String} the pruned html
  */
 ```

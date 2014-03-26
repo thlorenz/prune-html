@@ -1,6 +1,6 @@
 {
   "name": "prune-html",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Given an html string it removes elements matching CSS selector(s) and returns the pruned html string.",
   "main": "index.js",
   "scripts": {

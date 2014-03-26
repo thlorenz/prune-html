@@ -92,6 +92,7 @@ test('\nelement filter', function (t) {
   function filter_by_attribute () {
     return this.data('prune') !== undefined;
   }
+
   t.deepEqual(
       prune([ '*' ], html, filter_by_attribute).split('\n')
     , [ '<div class="jsdoc-githubify">',

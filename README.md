@@ -34,6 +34,7 @@ console.log(pruneHtml([ 'h1', '.details', 'h3' ], html));
 ```
 
 You can further refine the element filtering using [cheerio attributes][].
+
 ```js
 var pruneHtml = require('prune-html');
 
@@ -60,19 +61,99 @@ console.log(pruneHtml([ '*' ], html, filter_by_attribute));
 
 ## API
 
-### pruneHtml(selectors, html, filter)
-```
-/**
- * Prunes all elements matching the selectors from the given html and returns result.
- * 
- * @name pruneHtml
- * @function
- * @param {Array.<String>|String} selectors if one of these CSS selector(s) matches, the element is pruned
- * @param {String} html unpruned
- * @param {Function} optional function which can be used to filter elements further. Inside the function, `this` refers to the current element.
- * @return {String} the pruned html
- */
-```
+<!-- START docme generated API please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN docme TO UPDATE -->
+
+<div>
+<div class="jsdoc-githubify">
+<section>
+<article>
+<div class="container-overview">
+<dl class="details">
+</dl>
+</div>
+<dl>
+<dt>
+<h4 class="name" id="pruneHtml"><span class="type-signature"></span>pruneHtml<span class="signature">(selectors, html, <span class="optional">filter</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+</dt>
+<dd>
+<div class="description">
+<p>Prunes all elements matching the selectors from the given html and returns result.</p>
+</div>
+<h5>Parameters:</h5>
+<table class="params">
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Argument</th>
+<th class="last">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="name"><code>selectors</code></td>
+<td class="type">
+<span class="param-type">Array.&lt;String></span>
+|
+<span class="param-type">String</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last"><p>if one of these CSS selector(s) matches, the element is pruned</p></td>
+</tr>
+<tr>
+<td class="name"><code>html</code></td>
+<td class="type">
+<span class="param-type">string</span>
+</td>
+<td class="attributes">
+</td>
+<td class="description last"><p>unpruned html</p></td>
+</tr>
+<tr>
+<td class="name"><code>filter</code></td>
+<td class="type">
+<span class="param-type">function</span>
+</td>
+<td class="attributes">
+&lt;optional><br>
+</td>
+<td class="description last"><p>function which can be used to filter elements further. Inside the function, <code>this</code> refers to the current element.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="details">
+<dt class="tag-source">Source:</dt>
+<dd class="tag-source"><ul class="dummy">
+<li>
+<a href="https://github.com/thlorenz/prune-html/blob/pr/index.js">index.js</a>
+<span>, </span>
+<a href="https://github.com/thlorenz/prune-html/blob/pr/index.js#L21">lineno 21</a>
+</li>
+</ul></dd>
+</dl>
+<h5>Returns:</h5>
+<div class="param-desc">
+<p>the pruned html</p>
+</div>
+<dl>
+<dt>
+Type
+</dt>
+<dd>
+<span class="param-type">string</span>
+</dd>
+</dl>
+</dd>
+</dl>
+</article>
+</section>
+</div>
+
+*generated with [docme](https://github.com/thlorenz/docme)*
+</div>
+<!-- END docme generated API please keep comment here to allow auto update -->
 
 ## License
 
